@@ -23,7 +23,7 @@
     <section id="hero">
         <div class="container hero-content">
             <h1>Seguridad Inteligente para el <span class="highlight">Mundo Moderno</span></h1>
-            <p>Especialistas en modernización tecnológica y blindaje de infraestructuras críticas en Aegis Vision Tech S.A.S.</p>
+            <p>Especialistas en modernización tecnológica y blindaje de infraestructuras críticas.</p>
             <div class="hero-btns">
                 <a href="#servicios" class="btn-primary">Nuestros Servicios</a>
                 <a href="#contacto" class="btn-secondary">Contáctanos ahora</a>
@@ -33,24 +33,75 @@
 
     <section id="servicios" class="container">
         <h2 class="section-title">Soluciones de Vanguardia</h2>
+        <p style="text-align: center; color: #8b949e; margin-bottom: 2rem;">Haz clic en cada solución para conocer más detalles.</p>
         <div class="grid">
-            <div class="card">
+            <div class="card" onclick="openModal('modal-ciber')">
                 <i class="fas fa-shield-halved"></i>
-                <h3>Ciberseguridad</h3>
-                <p>Protección proactiva contra amenazas digitales y auditorías de vulnerabilidad.</p>
+                <h3>Ciberseguridad Proactiva</h3>
+                <p>Protección Zero Trust y blindaje de datos críticos.</p>
+                <span class="ver-mas">Saber más +</span>
             </div>
-            <div class="card">
+
+            <div class="card" onclick="openModal('modal-modern')">
                 <i class="fas fa-microchip"></i>
                 <h3>Modernización Tech</h3>
-                <p>Actualización de sistemas antiguos a arquitecturas Cloud y microservicios.</p>
+                <p>Migración a la nube y optimización de infraestructura.</p>
+                <span class="ver-mas">Saber más +</span>
             </div>
-            <div class="card">
+
+            <div class="card" onclick="openModal('modal-vision')">
                 <i class="fas fa-eye"></i>
-                <h3>Visión Artificial</h3>
-                <p>Analítica avanzada para vigilancia inteligente y control de accesos.</p>
+                <h3>Visión Artificial & IA</h3>
+                <p>Analítica de video inteligente en tiempo real.</p>
+                <span class="ver-mas">Saber más +</span>
             </div>
         </div>
     </section>
+
+    <div id="modal-ciber" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-ciber')">&times;</span>
+            <h2>🛡️ Ciberseguridad Proactiva</h2>
+            <hr>
+            <p>En Aegis Vision Tech, no solo reaccionamos ante ataques; los prevenimos. Nuestro enfoque incluye:</p>
+            <ul>
+                <li><strong>Arquitectura Zero Trust:</strong> Nunca confiar, siempre verificar cada acceso.</li>
+                <li><strong>Defensa contra Ransomware:</strong> Sistemas de respaldo y recuperación inmediata.</li>
+                <li><strong>Auditorías SOC:</strong> Monitoreo continuo de tráfico sospechoso 24/7.</li>
+                <li><strong>Encriptación AES-256:</strong> Blindaje de grado militar para comunicaciones.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-modern" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-modern')">&times;</span>
+            <h2>🚀 Modernización Tecnológica</h2>
+            <hr>
+            <p>Transformamos sistemas tradicionales en activos digitales de alto rendimiento:</p>
+            <ul>
+                <li><strong>Migración Cloud:</strong> Transición segura hacia AWS, Azure o Google Cloud.</li>
+                <li><strong>Virtualización:</strong> Reducción de costos de hardware mediante microservicios.</li>
+                <li><strong>Optimización Legacy:</strong> Actualizamos software antiguo sin perder datos históricos.</li>
+                <li><strong>Escalabilidad:</strong> Infraestructuras preparadas para crecer sin interrupciones.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-vision" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-vision')">&times;</span>
+            <h2>👁️ Visión Artificial & IA</h2>
+            <hr>
+            <p>Convertimos sus cámaras en ojos inteligentes capaces de tomar decisiones:</p>
+            <ul>
+                <li><strong>Detección de Intrusos:</strong> Identificación humana y de vehículos filtrando alarmas falsas.</li>
+                <li><strong>Reconocimiento Biométrico:</strong> Control de acceso sin contacto de alta precisión.</li>
+                <li><strong>Analítica de Comportamiento:</strong> Alertas por caídas, merodeo o abandono de objetos.</li>
+                <li><strong>Mapas de Calor:</strong> Optimización de flujos en áreas comerciales e industriales.</li>
+            </ul>
+        </div>
+    </div>
 
     <section id="contacto" class="container">
         <h2 class="section-title">Canales de Atención</h2>
@@ -60,13 +111,11 @@
                 <h3>Correo Electrónico</h3>
                 <a href="mailto:contacto.aegisvision@gmail.com">contacto.aegisvision@gmail.com</a>
             </div>
-            
             <div class="contact-item">
                 <i class="fas fa-phone-alt"></i>
                 <h3>Teléfono / WhatsApp</h3>
                 <a href="https://wa.me/573160408242" target="_blank">+57 316 040 8242</a>
             </div>
-
             <div class="contact-item">
                 <i class="fab fa-instagram"></i>
                 <h3>Instagram</h3>
@@ -76,10 +125,15 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Aegis Vision Tech S.A.S. Todos los derechos reservados.</p>
-        </div>
+        <div class="container"><p>&copy; 2026 Aegis Vision Tech S.A.S.</p></div>
     </footer>
 
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') { event.target.style.display = "none"; }
+        }
+    </script>
 </body>
 </html>
