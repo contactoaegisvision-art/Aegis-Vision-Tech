@@ -69,7 +69,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
         .nav-links a {
@@ -77,6 +77,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -117,7 +118,7 @@
             transform: scale(1.05);
         }
 
-        /* Hero Premium con imagen directa de internet (Fondo Seguro) */
+        /* Hero Premium */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(10, 17, 40, 0.4), rgba(10, 17, 40, 0.9)), 
@@ -147,7 +148,7 @@
             max-width: 800px;
         }
 
-        /* Tarjetas (Cards) */
+        /* Tarjetas */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -193,9 +194,66 @@
             color: white;
         }
 
+        /* SECCIÓN NUEVA: IDENTIDAD CORPORATIVA */
+        .identidad-section {
+            background-color: var(--azul-claro);
+            color: var(--blanco);
+        }
+
+        .identidad-section h2 {
+            color: var(--blanco);
+        }
+
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 30px;
+        }
+
+        .identidad-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 5px solid var(--naranja-neon);
+            transition: 0.3s;
+        }
+
+        .identidad-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .identidad-card i {
+            font-size: 2.5rem;
+            color: var(--naranja-neon);
+            margin-bottom: 15px;
+        }
+
+        .identidad-card h3 {
+            color: var(--blanco);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .identidad-card p, .identidad-card ul {
+            color: var(--gris-plata);
+            font-size: 1rem;
+        }
+
+        .identidad-card ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .identidad-card ul li {
+            margin-bottom: 8px;
+        }
+
         /* SECCIÓN SERVICIOS */
-        .services-section { background-color: var(--azul-claro); }
-        .services-section h2 { color: var(--blanco); }
+        .services-section { background-color: var(--blanco); }
+        .services-section h2 { color: var(--azul-medianoche); }
+        .services-section .card { border: 1px solid #eee; } /* Para que resalten sobre fondo blanco */
 
         /* SECCIÓN DOCUMENTOS */
         .documents { background-color: var(--azul-medianoche); }
@@ -318,6 +376,7 @@
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#identidad">Identidad</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#documentos">Documentos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -353,6 +412,38 @@
                 <h3>Tecnología</h3>
                 <p>Uso de redes neuronales y visión artificial de última generación.</p>
                 <span class="btn-outline">Conocer más</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="identidad" class="identidad-section">
+        <div class="container">
+            <h2>Identidad Corporativa</h2>
+            <div class="grid-2x2">
+                <div class="identidad-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Nuestra Misión</h3>
+                    <p>Brindar soluciones de seguridad perimetral e integral combinando el talento de expertos con tecnología de punta (Inteligencia Artificial y Drones). Garantizamos protección inquebrantable, prevención proactiva y tranquilidad absoluta para los activos y el personal de nuestros clientes.</p>
+                </div>
+                <div class="identidad-card">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>Nuestra Visión</h3>
+                    <p>Posicionarnos para el 2030 como la empresa de seguridad tecnológica líder y más innovadora de Colombia, siendo referentes absolutos en la transición hacia la vigilancia híbrida y automatizada a nivel corporativo, residencial e industrial.</p>
+                </div>
+                <div class="identidad-card">
+                    <i class="fa-solid fa-list-check"></i>
+                    <h3>Objetivos Estratégicos</h3>
+                    <ul>
+                        <li>Reducir a cero las vulnerabilidades perimetrales mediante vigilancia continua 24/7.</li>
+                        <li>Implementar algoritmos predictivos para erradicar las falsas alarmas.</li>
+                        <li>Ofrecer respuestas operativas en tiempos récord gracias a nuestra red de Drones Aegis-Fly.</li>
+                    </ul>
+                </div>
+                <div class="identidad-card">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <h3>Trascendencia Empresarial</h3>
+                    <p>Más allá de la vigilancia, buscamos transformar el ecosistema de convivencia en Colombia. Aspiramos a democratizar la tecnología de alta gama para construir ciudades e industrias pacíficas, donde la confianza, el crecimiento y el progreso no se vean limitados por la inseguridad.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -415,7 +506,7 @@
             <div class="contact-info">
                 <h3>Información</h3>
                 <p><i class="fa-solid fa-envelope"></i> contacto.aegisvision@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> +57 316 040 8242 </p>
+                <p><i class="fa-solid fa-phone"></i> +57 300 000 0000</p>
                 <p><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</p>
             </div>
             <div class="contact-form">
