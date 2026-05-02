@@ -30,6 +30,7 @@
             line-height: 1.6;
         }
 
+        /* Navegación */
         header {
             background-color: var(--azul-medianoche);
             padding: 1rem 5%;
@@ -82,43 +83,11 @@
             color: var(--naranja-neon);
         }
 
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 0;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--azul-medianoche);
-            text-transform: uppercase;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--naranja-neon);
-            color: var(--blanco);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s, background-color 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: #e65100;
-            transform: scale(1.05);
-        }
-
-        /* HERO ACTUALIZADO CON TU RUTA */
+        /* Sección Hero con tu ruta específica */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(10, 17, 40, 0.3), rgba(10, 17, 40, 0.8)), 
+            /* RUTA: carpeta hero-bg / imagen fondo.png */
+            background: linear-gradient(rgba(10, 17, 40, 0.4), rgba(10, 17, 40, 0.8)), 
                         url('hero-bg/fondo.png') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -127,6 +96,9 @@
             color: var(--blanco);
             padding: 0 20px;
         }
+
+        /* Si el fondo sigue sin cargar, prueba con esta ruta alternativa en el url: 
+           url('./hero-bg/fondo.png') o url('../hero-bg/fondo.png') */
 
         .hero h1 { 
             font-size: clamp(2.5rem, 8vw, 4.5rem); 
@@ -145,6 +117,40 @@
             max-width: 800px;
         }
 
+        /* Utilidades */
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--naranja-neon);
+            color: var(--blanco);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #e65100;
+            transform: scale(1.05);
+        }
+
+        /* Tarjetas */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -157,8 +163,7 @@
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            color: var(--azul-medianoche);
+            transition: 0.3s;
             cursor: pointer;
             border-bottom: 4px solid transparent;
         }
@@ -190,21 +195,15 @@
             color: white;
         }
 
-        .services-section { background-color: var(--azul-claro); }
-        .services-section h2 { color: var(--blanco); }
-
-        .documents { background-color: var(--azul-medianoche); }
-        .documents h2 { color: var(--blanco); }
+        /* Colores de secciones */
+        .services-section { background-color: var(--azul-claro); color: white; }
+        .services-section h2 { color: white; }
         
-        .doc-card {
-            background-color: var(--azul-claro);
-            color: var(--blanco);
-            text-decoration: none;
-            display: block;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-        .doc-card h3 { color: var(--blanco); }
+        .documents { background-color: var(--azul-medianoche); color: white; }
+        .documents h2 { color: white; }
+        .doc-card { background-color: var(--azul-claro); color: white; text-decoration: none; display: block; }
 
+        /* Modales */
         .modal {
             display: none; 
             position: fixed;
@@ -213,7 +212,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(10, 17, 40, 0.85); 
+            background-color: rgba(10, 17, 40, 0.9); 
             align-items: center;
             justify-content: center;
         }
@@ -223,80 +222,51 @@
             padding: 40px;
             border-radius: 15px;
             width: 90%;
-            max-width: 700px;
+            max-width: 600px;
             position: relative;
-            text-align: left;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            animation: deslizarArriba 0.4s ease;
+            color: var(--azul-medianoche);
+            animation: aparecer 0.3s ease;
         }
 
-        @keyframes deslizarArriba {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @keyframes aparecer {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         .close-btn {
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 2.5rem;
-            color: var(--azul-claro);
+            font-size: 2rem;
             cursor: pointer;
-            line-height: 1;
         }
 
-        .close-btn:hover { color: var(--naranja-neon); }
-
-        .modal-content h3 {
-            color: var(--azul-medianoche);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--naranja-neon);
-            padding-bottom: 10px;
-        }
-
-        .modal-options-list { list-style: none; }
+        .modal-options-list { list-style: none; margin-top: 20px; }
         .modal-options-list li {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: white;
+            margin-bottom: 10px;
+            padding: 10px;
             border-left: 4px solid var(--naranja-neon);
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .modal-options-list li h4 {
-            color: var(--naranja-neon);
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            background: #eee;
         }
 
+        /* Contacto */
         .contact-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 50px;
+            gap: 30px;
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 10px;
         }
-
-        .contact-info, .contact-form { flex: 1; min-width: 300px; }
-        .contact-form input, .contact-form select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+        .contact-info, .contact-form { flex: 1; min-width: 280px; }
+        .contact-form input, .contact-form select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; }
 
         footer {
             background: var(--azul-medianoche);
             color: white;
             text-align: center;
-            padding: 30px;
-            border-top: 3px solid var(--naranja-neon);
+            padding: 20px;
+            border-top: 2px solid var(--naranja-neon);
         }
     </style>
 </head>
@@ -332,45 +302,45 @@
             <div class="card" onclick="abrirModal('modal-innovacion')">
                 <i class="fa-solid fa-rocket"></i>
                 <h3>Innovación</h3>
-                <p>Startup dedicada a redefinir la vigilancia perimetral con tecnología autónoma.</p>
-                <span class="btn-outline">Conocer más</span>
+                <p>Redefiniendo la vigilancia con tecnología autónoma.</p>
+                <span class="btn-outline">Ver detalle</span>
             </div>
             <div class="card" onclick="abrirModal('modal-seguridad')">
                 <i class="fa-solid fa-shield-virus"></i>
                 <h3>Seguridad</h3>
-                <p>Sistemas predictivos que detectan amenazas antes de que ocurran.</p>
-                <span class="btn-outline">Conocer más</span>
+                <p>Detección proactiva de amenazas en tiempo real.</p>
+                <span class="btn-outline">Ver detalle</span>
             </div>
             <div class="card" onclick="abrirModal('modal-tecnologia')">
                 <i class="fa-solid fa-microchip"></i>
                 <h3>Tecnología</h3>
-                <p>Uso de redes neuronales y visión artificial de última generación.</p>
-                <span class="btn-outline">Conocer más</span>
+                <p>Visión artificial y redes neuronales de punta.</p>
+                <span class="btn-outline">Ver detalle</span>
             </div>
         </div>
     </section>
 
     <section id="servicios" class="services-section">
         <div class="container">
-            <h2>Nuestro Catálogo de Productos</h2>
+            <h2>Catálogo de Productos</h2>
             <div class="grid-3">
-                <div class="card service-card" onclick="abrirModal('modal-camaras')">
-                    <i class="fa-solid fa-camera-retro"></i>
-                    <h3>Kit de Cámaras con IA</h3>
-                    <p>Sistemas de videovigilancia avanzados equipados con IA.</p>
-                    <span class="btn-outline">Ver Opciones</span>
+                <div class="card" onclick="abrirModal('modal-camaras')">
+                    <i class="fa-solid fa-camera"></i>
+                    <h3>Cámaras con IA</h3>
+                    <p>Reconocimiento facial y lectura de placas.</p>
+                    <span class="btn-outline">Opciones</span>
                 </div>
-                <div class="card service-card" onclick="abrirModal('modal-drones')">
-                    <i class="fa-brands fa-fly"></i>
-                    <h3>Drones "Aegis-Fly"</h3>
-                    <p>Patrullaje perimetral automatizado con drones de alta tecnología.</p>
-                    <span class="btn-outline">Ver Opciones</span>
+                <div class="card" onclick="abrirModal('modal-drones')">
+                    <i class="fa-solid fa-drone"></i>
+                    <h3>Aegis-Fly</h3>
+                    <p>Patrullaje autónomo con drones térmicos.</p>
+                    <span class="btn-outline">Opciones</span>
                 </div>
-                <div class="card service-card" onclick="abrirModal('modal-alarmas')">
+                <div class="card" onclick="abrirModal('modal-alarmas')">
                     <i class="fa-solid fa-bell"></i>
                     <h3>Alarma Inteligente</h3>
-                    <p>Sistema integral de alertas gestionado desde nuestra App.</p>
-                    <span class="btn-outline">Ver Opciones</span>
+                    <p>Control total desde nuestra aplicación móvil.</p>
+                    <span class="btn-outline">Opciones</span>
                 </div>
             </div>
         </div>
@@ -378,25 +348,19 @@
 
     <section id="documentos" class="documents">
         <div class="container">
-            <h2>Documentos Corporativos</h2>
+            <h2>Documentos Legales</h2>
             <div class="grid-3">
-                <a href="assets/docs/licencia-funcionamiento.pdf" target="_blank" class="card doc-card">
+                <a href="assets/docs/licencia.pdf" target="_blank" class="card doc-card">
                     <i class="fa-solid fa-file-pdf"></i>
-                    <h3>Licencia</h3>
-                    <p>Resolución Legal SVSP</p>
-                    <span class="btn-outline">Abrir PDF</span>
+                    <h3>Licencia SVSP</h3>
                 </a>
-                <a href="assets/docs/politica-privacidad.pdf" target="_blank" class="card doc-card">
-                    <i class="fa-solid fa-shield-halved"></i>
+                <a href="assets/docs/privacidad.pdf" target="_blank" class="card doc-card">
+                    <i class="fa-solid fa-user-lock"></i>
                     <h3>Privacidad</h3>
-                    <p>Protección de Datos</p>
-                    <span class="btn-outline">Abrir PDF</span>
                 </a>
-                <a href="assets/docs/manual-funciones.pdf" target="_blank" class="card doc-card">
-                    <i class="fa-solid fa-user-gear"></i>
+                <a href="assets/docs/manual.pdf" target="_blank" class="card doc-card">
+                    <i class="fa-solid fa-book"></i>
                     <h3>Manual</h3>
-                    <p>Roles Operativos</p>
-                    <span class="btn-outline">Abrir PDF</span>
                 </a>
             </div>
         </div>
@@ -406,100 +370,32 @@
         <h2>Contacto</h2>
         <div class="contact-flex">
             <div class="contact-info">
-                <h3>Información</h3>
-                <p><i class="fa-solid fa-envelope"></i> contacto.aegisvision@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> +57 300 000 0000</p>
-                <p><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</p>
+                <p><strong>Email:</strong> contacto.aegisvision@gmail.com</p>
+                <p><strong>Ubicación:</strong> Bogotá, Colombia</p>
             </div>
             <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Tu Nombre" required>
-                    <input type="email" placeholder="Tu Correo" required>
-                    <select>
-                        <option>Servicio Residencial</option>
-                        <option>Servicio Empresarial</option>
-                    </select>
-                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
-                </form>
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Email">
+                <button class="btn-primary">Enviar</button>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Aegis Vision Tech S.A.S. - Todos los derechos reservados.</p>
+        <p>&copy; 2026 Aegis Vision Tech S.A.S. | Tecnología de vanguardia</p>
     </footer>
 
-    <div id="modal-innovacion" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal('modal-innovacion')">&times;</span>
-            <h3>Nuestra Innovación</h3>
-            <ul class="modal-options-list">
-                <li><h4>Mente de Startup</h4><p>Agilidad para integrar IA antes que la competencia.</p></li>
-                <li><h4>Vigilancia Robotizada</h4><p>Uso de patrullas autónomas inagotables.</p></li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-seguridad" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal('modal-seguridad')">&times;</span>
-            <h3>Seguridad Total</h3>
-            <ul class="modal-options-list">
-                <li><h4>Central 24/7</h4><p>Monitoreo algorítmico ininterrumpido.</p></li>
-                <li><h4>Expertos</h4><p>Protocolos de respuesta inmediata con autoridades.</p></li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-tecnologia" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal('modal-tecnologia')">&times;</span>
-            <h3>Alta Tecnología</h3>
-            <ul class="modal-options-list">
-                <li><h4>Redes Neuronales</h4><p>Aprendizaje del entorno para cero falsas alarmas.</p></li>
-                <li><h4>Encriptación</h4><p>Datos protegidos con seguridad de grado militar.</p></li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-camaras" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal('modal-camaras')">&times;</span>
-            <h3>Kit de Cámaras con IA</h3>
-            <ul class="modal-options-list">
-                <li><h4>LPR</h4><p>Lectura de placas automática.</p></li>
-                <li><h4>Biometría</h4><p>Reconocimiento facial en tiempo real.</p></li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-drones" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal('modal-drones')">&times;</span>
-            <h3>Drones Aegis-Fly</h3>
-            <ul class="modal-options-list">
-                <li><h4>Autónomos</h4><p>Rondas programadas sin intervención humana.</p></li>
-                <li><h4>Térmicos</h4><p>Visión de calor para oscuridad total.</p></li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-alarmas" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal('modal-alarmas')">&times;</span>
-            <h3>Alarma Inteligente</h3>
-            <ul class="modal-options-list">
-                <li><h4>App Control</h4><p>Todo el sistema en tu celular.</p></li>
-                <li><h4>Pánico</h4><p>Botón de auxilio con GPS directo a central.</p></li>
-            </ul>
-        </div>
-    </div>
+    <div id="modal-innovacion" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-innovacion')">&times;</span><h3>Innovación</h3><ul class="modal-options-list"><li>Agilidad de Startup</li><li>Sistemas Autónomos</li></ul></div></div>
+    <div id="modal-seguridad" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-seguridad')">&times;</span><h3>Seguridad</h3><ul class="modal-options-list"><li>Central 24/7</li><li>Protocolos de Élite</li></ul></div></div>
+    <div id="modal-tecnologia" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-tecnologia')">&times;</span><h3>Tecnología</h3><ul class="modal-options-list"><li>Redes Neuronales</li><li>Cifrado Militar</li></ul></div></div>
+    <div id="modal-camaras" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-camaras')">&times;</span><h3>Kits de Cámaras</h3><ul class="modal-options-list"><li>Reconocimiento Facial</li><li>Lectura LPR</li></ul></div></div>
+    <div id="modal-drones" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-drones')">&times;</span><h3>Drones Aegis-Fly</h3><ul class="modal-options-list"><li>Rondas Autónomas</li><li>Cámaras Térmicas</li></ul></div></div>
+    <div id="modal-alarmas" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-alarmas')">&times;</span><h3>Alarmas</h3><ul class="modal-options-list"><li>Control por App</li><li>Botón de Pánico GPS</li></ul></div></div>
 
     <script>
-        function abrirModal(idModal) { document.getElementById(idModal).style.display = "flex"; }
-        function cerrarModal(idModal) { document.getElementById(idModal).style.display = "none"; }
-        window.onclick = function(event) { if (event.target.classList.contains('modal')) event.target.style.display = "none"; }
+        function abrirModal(id) { document.getElementById(id).style.display = "flex"; }
+        function cerrarModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.style.display = "none"; }
     </script>
-
 </body>
 </html>
