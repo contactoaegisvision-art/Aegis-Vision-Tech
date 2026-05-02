@@ -1,4 +1,4 @@
-/* Variables de Color */
+/* Variables de Color (Identidad de Aegis Vision Tech) */
 :root {
     --azul-medianoche: #0A1128;
     --azul-claro: #1A2A4A;
@@ -73,7 +73,7 @@ header {
     color: var(--naranja-neon);
 }
 
-/* Utilidades */
+/* Utilidades Generales */
 .container {
     width: 80%;
     margin: 0 auto;
@@ -132,7 +132,7 @@ h2 {
     color: var(--gris-plata);
 }
 
-/* Nosotros */
+/* Sección Nosotros */
 .lead-text {
     text-align: center;
     font-size: 1.2rem;
@@ -168,7 +168,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Servicios */
+/* Sección Servicios */
 .services {
     background-color: var(--azul-claro);
     color: var(--blanco);
@@ -198,7 +198,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Documentos Corporativos */
+/* Sección Documentos Corporativos */
 .documents {
     background-color: var(--blanco);
 }
@@ -264,7 +264,7 @@ h2 {
     color: var(--blanco);
 }
 
-/* Contacto */
+/* Sección Contacto */
 .contact-wrapper {
     display: flex;
     flex-wrap: wrap;
