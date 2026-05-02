@@ -148,9 +148,14 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: transform 0.3s;
             color: var(--azul-medianoche);
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
         }
 
-        .card:hover { transform: translateY(-10px); }
+        .card:hover { 
+            transform: translateY(-10px); 
+            border-bottom: 4px solid var(--naranja-neon);
+        }
 
         .card i {
             font-size: 3rem;
@@ -167,40 +172,30 @@
             border-radius: 20px;
             font-size: 0.9rem;
             transition: 0.3s;
-            cursor: pointer;
+        }
+
+        .card:hover .btn-outline {
+            background-color: var(--naranja-neon);
+            color: white;
         }
 
         /* SECCIÓN SERVICIOS */
         .services-section { background-color: var(--azul-claro); }
         .services-section h2 { color: var(--blanco); }
 
-        .service-card { cursor: pointer; border-bottom: 4px solid transparent; }
-        .service-card:hover { border-bottom: 4px solid var(--naranja-neon); }
-        .service-card:hover .btn-outline { background-color: var(--naranja-neon); color: white; }
-
-        /* SECCIÓN DOCUMENTOS (NUEVO DISEÑO PREMIUM OSCURO) */
-        .documents { 
-            background-color: var(--azul-medianoche); 
-        }
-        .documents h2 { 
-            color: var(--blanco); 
-        }
+        /* SECCIÓN DOCUMENTOS */
+        .documents { background-color: var(--azul-medianoche); }
+        .documents h2 { color: var(--blanco); }
         
         .doc-card {
             background-color: var(--azul-claro);
             color: var(--blanco);
             text-decoration: none;
             display: block;
-            border-bottom: 4px solid var(--naranja-neon);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Sombra más fuerte para fondo oscuro */
         }
+        .doc-card h3 { color: var(--blanco); }
 
-        .doc-card h3 { margin-bottom: 10px; color: var(--blanco); }
-        .doc-card p { color: var(--gris-plata); margin-bottom: 20px; }
-        .doc-card i { color: var(--naranja-neon); }
-        .doc-card:hover .btn-outline { background-color: var(--naranja-neon); color: white; }
-
-        /* VENTANAS EMERGENTES (MODALES) */
+        /* MODALES */
         .modal {
             display: none; 
             position: fixed;
@@ -238,7 +233,6 @@
             font-size: 2.5rem;
             color: var(--azul-claro);
             cursor: pointer;
-            transition: 0.3s;
             line-height: 1;
         }
 
@@ -253,7 +247,6 @@
         }
 
         .modal-options-list { list-style: none; }
-
         .modal-options-list li {
             margin-bottom: 15px;
             padding: 15px;
@@ -262,7 +255,6 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-
         .modal-options-list li h4 {
             color: var(--naranja-neon);
             margin-bottom: 5px;
@@ -279,11 +271,9 @@
             background: white;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .contact-info, .contact-form { flex: 1; min-width: 300px; }
-        
         .contact-form input, .contact-form select {
             width: 100%;
             padding: 12px;
@@ -330,20 +320,23 @@
     <section id="nosotros" class="container">
         <h2>Sobre Nosotros</h2>
         <div class="grid-3">
-            <div class="card">
+            <div class="card" onclick="abrirModal('modal-innovacion')">
                 <i class="fa-solid fa-rocket"></i>
                 <h3>Innovación</h3>
                 <p>Startup dedicada a redefinir la vigilancia perimetral con tecnología autónoma.</p>
+                <span class="btn-outline">Conocer más</span>
             </div>
-            <div class="card">
+            <div class="card" onclick="abrirModal('modal-seguridad')">
                 <i class="fa-solid fa-shield-virus"></i>
                 <h3>Seguridad</h3>
                 <p>Sistemas predictivos que detectan amenazas antes de que ocurran.</p>
+                <span class="btn-outline">Conocer más</span>
             </div>
-            <div class="card">
+            <div class="card" onclick="abrirModal('modal-tecnologia')">
                 <i class="fa-solid fa-microchip"></i>
                 <h3>Tecnología</h3>
                 <p>Uso de redes neuronales y visión artificial de última generación.</p>
+                <span class="btn-outline">Conocer más</span>
             </div>
         </div>
     </section>
@@ -358,14 +351,12 @@
                     <p>Sistemas de videovigilancia avanzados equipados con IA.</p>
                     <span class="btn-outline">Ver Opciones</span>
                 </div>
-                
                 <div class="card service-card" onclick="abrirModal('modal-drones')">
                     <i class="fa-brands fa-fly"></i>
                     <h3>Drones "Aegis-Fly"</h3>
                     <p>Patrullaje perimetral automatizado con drones de alta tecnología.</p>
                     <span class="btn-outline">Ver Opciones</span>
                 </div>
-
                 <div class="card service-card" onclick="abrirModal('modal-alarmas')">
                     <i class="fa-solid fa-bell"></i>
                     <h3>Alarma Inteligente</h3>
@@ -429,23 +420,72 @@
         <p>&copy; 2026 Aegis Vision Tech S.A.S. - Todos los derechos reservados.</p>
     </footer>
 
+    <div id="modal-innovacion" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal('modal-innovacion')">&times;</span>
+            <h3>Nuestra Innovación</h3>
+            <p>En Aegis Vision Tech, no solo instalamos equipos, creamos ecosistemas autónomos:</p>
+            <ul class="modal-options-list">
+                <li>
+                    <h4><i class="fa-solid fa-brain"></i> Mente de Startup</h4>
+                    <p>Nuestra agilidad nos permite integrar las últimas mejoras en IA meses antes que las empresas tradicionales.</p>
+                </li>
+                <li>
+                    <h4><i class="fa-solid fa-robot"></i> Vigilancia Sin Errores</h4>
+                    <p>Sustituimos el cansancio humano por la precisión inagotable de robots y drones programables.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-seguridad" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal('modal-seguridad')">&times;</span>
+            <h3>Seguridad Total</h3>
+            <p>Protegemos lo que más valoras con un enfoque proactivo, no solo reactivo:</p>
+            <ul class="modal-options-list">
+                <li>
+                    <h4><i class="fa-solid fa-eye"></i> Central 24/7</h4>
+                    <p>Monitoreo constante apoyado por algoritmos que alertan sobre comportamientos sospechosos al instante.</p>
+                </li>
+                <li>
+                    <h4><i class="fa-solid fa-user-shield"></i> Protocolos de Élite</h4>
+                    <p>Cada alerta es verificada por expertos en seguridad que coordinan respuestas inmediatas con autoridades.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-tecnologia" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal('modal-tecnologia')">&times;</span>
+            <h3>Alta Tecnología</h3>
+            <p>El ADN de nuestra empresa es el desarrollo de software y hardware avanzado:</p>
+            <ul class="modal-options-list">
+                <li>
+                    <h4><i class="fa-solid fa-network-wired"></i> Redes Neuronales</h4>
+                    <p>Nuestros sistemas aprenden del entorno, reduciendo las falsas alarmas por animales o movimiento de vegetación al 0.1%.</p>
+                </li>
+                <li>
+                    <h4><i class="fa-solid fa-satellite-dish"></i> Conectividad Encriptada</h4>
+                    <p>Toda la transmisión de datos cuenta con cifrado de grado militar para garantizar que tu privacidad sea impenetrable.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div id="modal-camaras" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="cerrarModal('modal-camaras')">&times;</span>
             <h3>Kit de Cámaras con IA</h3>
-            <p>Opciones de ejecución y servicios integrados:</p>
             <ul class="modal-options-list">
                 <li>
                     <h4><i class="fa-solid fa-id-card"></i> LPR (Lectura de Placas)</h4>
-                    <p>Cámaras ubicadas en accesos vehiculares que registran, autorizan o bloquean el ingreso según la base de datos.</p>
+                    <p>Cámaras que registran, autorizan o bloquean el ingreso vehicular automáticamente.</p>
                 </li>
                 <li>
                     <h4><i class="fa-solid fa-face-viewfinder"></i> Reconocimiento Facial</h4>
-                    <p>Biometría en tiempo real para identificar personal autorizado y alertar sobre personas en listas de exclusión.</p>
-                </li>
-                <li>
-                    <h4><i class="fa-solid fa-person-walking-arrow-right"></i> Analítica Perimetral</h4>
-                    <p>Detecta merodeo, cruce de líneas virtuales y objetos abandonados, filtrando falsas alarmas (animales o clima).</p>
+                    <p>Biometría en tiempo real para identificar personal autorizado y alertar sobre desconocidos.</p>
                 </li>
             </ul>
         </div>
@@ -455,19 +495,14 @@
         <div class="modal-content">
             <span class="close-btn" onclick="cerrarModal('modal-drones')">&times;</span>
             <h3>Drones "Aegis-Fly"</h3>
-            <p>Opciones de ejecución y servicios integrados:</p>
             <ul class="modal-options-list">
                 <li>
-                    <h4><i class="fa-solid fa-route"></i> Patrullaje Autónomo Programado</h4>
-                    <p>Rondas perimetrales en horarios específicos gestionadas por estaciones de carga autónomas ("nidos").</p>
+                    <h4><i class="fa-solid fa-route"></i> Patrullaje Autónomo</h4>
+                    <p>Rondas perimetrales programadas gestionadas por estaciones de carga inteligentes.</p>
                 </li>
                 <li>
-                    <h4><i class="fa-solid fa-bolt"></i> Reacción Inmediata (SOS)</h4>
-                    <p>Al activarse una alarma, el dron despega en menos de 10 segundos hacia las coordenadas exactas del incidente.</p>
-                </li>
-                <li>
-                    <h4><i class="fa-solid fa-temperature-half"></i> Termografía Nocturna</h4>
-                    <p>Cámaras térmicas integradas para detectar intrusos en la oscuridad total o en zonas de densa vegetación.</p>
+                    <h4><i class="fa-solid fa-temperature-half"></i> Termografía</h4>
+                    <p>Cámaras térmicas para detección de intrusos en oscuridad total o vegetación densa.</p>
                 </li>
             </ul>
         </div>
@@ -477,19 +512,14 @@
         <div class="modal-content">
             <span class="close-btn" onclick="cerrarModal('modal-alarmas')">&times;</span>
             <h3>Alarma Inteligente</h3>
-            <p>Opciones de ejecución y servicios integrados:</p>
             <ul class="modal-options-list">
                 <li>
-                    <h4><i class="fa-solid fa-mobile-screen"></i> Gestión por App Móvil</h4>
-                    <p>Armado, desarmado y monitoreo de sensores en tiempo real directamente desde el smartphone del cliente.</p>
+                    <h4><i class="fa-solid fa-mobile-screen"></i> Gestión por App</h4>
+                    <p>Control total de sensores y armado del sistema desde tu smartphone.</p>
                 </li>
                 <li>
-                    <h4><i class="fa-solid fa-hand-pointer"></i> Botón de Pánico Integrado</h4>
-                    <p>Activación silenciosa que envía coordenadas GPS y video en vivo a nuestra central de monitoreo 24/7.</p>
-                </li>
-                <li>
-                    <h4><i class="fa-solid fa-house-lock"></i> Integración Domótica Disuasoria</h4>
-                    <p>En caso de intrusión, el sistema puede encender reflectores, reproducir sirenas de alta potencia y bloquear puertas electrónicas.</p>
+                    <h4><i class="fa-solid fa-hand-pointer"></i> Botón de Pánico</h4>
+                    <p>Activación silenciosa con envío de ubicación GPS a nuestra central de monitoreo.</p>
                 </li>
             </ul>
         </div>
