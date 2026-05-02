@@ -147,6 +147,7 @@
             text-align: center;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: transform 0.3s;
+            color: var(--azul-medianoche);
         }
 
         .card:hover { transform: translateY(-10px); }
@@ -169,7 +170,15 @@
             cursor: pointer;
         }
 
-        /* Interacción Tarjetas de Servicio */
+        /* SECCIÓN SERVICIOS (Ajuste de fondo azul) */
+        .services-section {
+            background-color: var(--azul-claro);
+        }
+        
+        .services-section h2 {
+            color: var(--blanco);
+        }
+
         .service-card {
             cursor: pointer;
             border-bottom: 4px solid transparent;
@@ -202,14 +211,14 @@
 
         /* VENTANAS EMERGENTES (MODALES) */
         .modal {
-            display: none; /* Oculto por defecto */
+            display: none; 
             position: fixed;
             z-index: 2000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(10, 17, 40, 0.85); /* Fondo oscuro transparente */
+            background-color: rgba(10, 17, 40, 0.85); 
             align-items: center;
             justify-content: center;
         }
@@ -348,28 +357,30 @@
         </div>
     </section>
 
-    <section id="servicios" class="container">
-        <h2>Nuestro Catálogo de Productos</h2>
-        <div class="grid-3">
-            <div class="card service-card" onclick="abrirModal('modal-camaras')">
-                <i class="fa-solid fa-camera-retro"></i>
-                <h3>Kit de Cámaras con IA</h3>
-                <p>Sistemas de videovigilancia avanzados equipados con IA.</p>
-                <span class="btn-outline">Ver Opciones</span>
-            </div>
-            
-            <div class="card service-card" onclick="abrirModal('modal-drones')">
-                <i class="fa-brands fa-fly"></i>
-                <h3>Drones "Aegis-Fly"</h3>
-                <p>Patrullaje perimetral automatizado con drones de alta tecnología.</p>
-                <span class="btn-outline">Ver Opciones</span>
-            </div>
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <h2>Nuestro Catálogo de Productos</h2>
+            <div class="grid-3">
+                <div class="card service-card" onclick="abrirModal('modal-camaras')">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <h3>Kit de Cámaras con IA</h3>
+                    <p>Sistemas de videovigilancia avanzados equipados con IA.</p>
+                    <span class="btn-outline">Ver Opciones</span>
+                </div>
+                
+                <div class="card service-card" onclick="abrirModal('modal-drones')">
+                    <i class="fa-brands fa-fly"></i>
+                    <h3>Drones "Aegis-Fly"</h3>
+                    <p>Patrullaje perimetral automatizado con drones de alta tecnología.</p>
+                    <span class="btn-outline">Ver Opciones</span>
+                </div>
 
-            <div class="card service-card" onclick="abrirModal('modal-alarmas')">
-                <i class="fa-solid fa-bell"></i>
-                <h3>Alarma Inteligente</h3>
-                <p>Sistema integral de alertas gestionado desde nuestra App.</p>
-                <span class="btn-outline">Ver Opciones</span>
+                <div class="card service-card" onclick="abrirModal('modal-alarmas')">
+                    <i class="fa-solid fa-bell"></i>
+                    <h3>Alarma Inteligente</h3>
+                    <p>Sistema integral de alertas gestionado desde nuestra App.</p>
+                    <span class="btn-outline">Ver Opciones</span>
+                </div>
             </div>
         </div>
     </section>
@@ -494,17 +505,14 @@
     </div>
 
     <script>
-        // Función para abrir la ventana
         function abrirModal(idModal) {
             document.getElementById(idModal).style.display = "flex";
         }
 
-        // Función para cerrar la ventana en la "X"
         function cerrarModal(idModal) {
             document.getElementById(idModal).style.display = "none";
         }
 
-        // Función para cerrar la ventana si el usuario hace clic afuera de la caja blanca
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = "none";
