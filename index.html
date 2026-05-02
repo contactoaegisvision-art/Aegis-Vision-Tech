@@ -4,82 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aegis Vision Tech S.A.S.</title>
-    
-    <style>
-        body { 
-            background-color: #0A1128 !important; /* Fondo azul oscuro */
-            color: #F4F4F9 !important; /* Letras blancas */
-            font-family: Arial, sans-serif;
-        }
-        h1, h2, h3 {
-            color: #FF5A00 !important; /* Títulos en naranja neón */
-        }
-        .container {
-            border: 2px solid #FF5A00; /* Borde naranja para ver los contenedores */
-            padding: 20px;
-            margin: 20px;
-        }
-    </style>
     <link rel="stylesheet" href="styles.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo-container">
-                <img src="assets/logo.png" alt="Logo Aegis Vision Tech" class="logo-img" style="max-height: 50px;">
+                <img src="assets/logo.png" alt="Logo Aegis Vision Tech" class="logo-img">
                 <span class="logo-text">Aegis Vision Tech</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#inicio" style="color: white;">Inicio</a></li>
-                <li><a href="#nosotros" style="color: white;">Nosotros</a></li>
-                <li><a href="#servicios" style="color: white;">Servicios</a></li>
-                <li><a href="#documentos" style="color: white;">Documentos</a></li>
-                <li><a href="#contacto" style="color: white;">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#documentos">Documentos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="inicio" class="hero container">
+    <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>Protección inteligente, <span class="highlight">presencia absoluta.</span></h1>
             <p>Seguridad híbrida: Inteligencia Artificial + Drones + Personal Humano</p>
+            <a href="#contacto" class="btn-primary">Solicitar Asesoría</a>
         </div>
     </section>
 
-    <section id="nosotros" class="about container">
-        <div>
+    <section id="nosotros" class="about">
+        <div class="container">
             <h2>Sobre Nosotros</h2>
             <p class="lead-text">Aegis Vision Tech S.A.S. es una startup de seguridad que utiliza Inteligencia Artificial para el análisis de video en tiempo real y drones autónomos para la vigilancia de perímetros.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>Visión y Misión</h3>
+                    <p>Resolver las fallas de la vigilancia tradicional mediante la convergencia tecnológica, el uso de redes de datos de alta velocidad y almacenamiento en la nube.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Ventajas</h3>
+                    <p>Monitoreo 24/7 sin puntos ciegos y analítica predictiva de delitos para una protección proactiva.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Beneficios</h3>
+                    <p>Reducción significativa de costos operativos y tranquilidad total gestionada directamente desde nuestra App.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="servicios" class="services container">
-        <div>
+    <section id="servicios" class="services">
+        <div class="container">
             <h2>Nuestro Catálogo de Productos</h2>
-            <p>1. Kit de Cámaras con IA</p>
-            <p>2. Drones "Aegis-Fly"</p>
-            <p>3. Alarma Inteligente</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <h3>Kit de Cámaras con IA</h3>
+                    <p>Sistemas de videovigilancia avanzados equipados con Reconocimiento Facial en tiempo real.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-brands fa-fly"></i>
+                    <h3>Drones "Aegis-Fly"</h3>
+                    <p>Patrullaje perimetral automatizado con drones de alta autonomía y cámaras térmicas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-bell"></i>
+                    <h3>Alarma Inteligente</h3>
+                    <p>Sistema integral de alertas enlazado a nuestra App móvil para control total desde cualquier lugar.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="documentos" class="documents container">
-        <div>
+    <section id="documentos" class="documents">
+        <div class="container">
             <h2>Documentos Corporativos</h2>
-            <a href="assets/docs/licencia-funcionamiento.pdf" target="_blank" style="color: #FF5A00; display: block;">Ver Licencia de Funcionamiento</a>
-            <a href="assets/docs/politica-privacidad.pdf" target="_blank" style="color: #FF5A00; display: block;">Ver Política de Privacidad</a>
-            <a href="assets/docs/manual-funciones.pdf" target="_blank" style="color: #FF5A00; display: block;">Ver Manual de Funciones</a>
+            <p class="lead-text">Consulta nuestra documentación legal y directrices operativas que garantizan la calidad y transparencia de nuestros servicios.</p>
+            
+            <div class="docs-grid">
+                <a href="assets/docs/licencia-funcionamiento.pdf" target="_blank" class="doc-card">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <h3>Licencia de Funcionamiento</h3>
+                    <p>Resolución SVSP</p>
+                    <span class="btn-read">Ver documento</span>
+                </a>
+
+                <a href="assets/docs/politica-privacidad.pdf" target="_blank" class="doc-card">
+                    <i class="fa-solid fa-file-shield"></i>
+                    <h3>Política de Privacidad</h3>
+                    <p>Tratamiento de datos</p>
+                    <span class="btn-read">Ver documento</span>
+                </a>
+
+                <a href="assets/docs/manual-funciones.pdf" target="_blank" class="doc-card">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <h3>Manual de Funciones</h3>
+                    <p>Roles operativos</p>
+                    <span class="btn-read">Ver documento</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="contacto" class="contact container">
-        <div>
+    <section id="contacto" class="contact">
+        <div class="container">
             <h2>Contáctanos</h2>
-            <p>contacto.aegisvision@gmail.com</p>
-            <p>+57 300 000 0000</p>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Ponte en contacto</h3>
+                    <p><i class="fa-solid fa-envelope"></i> contacto.aegisvision@gmail.com</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> +57 300 000 0000</p>
+                    <p><i class="fa-brands fa-x-twitter"></i> @AegisVisionTech</p>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Nombre completo" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <select required>
+                            <option value="" disabled selected>Tipo de servicio de interés</option>
+                            <option value="residencial">Residencial</option>
+                            <option value="empresarial">Empresarial</option>
+                        </select>
+                        <input type="text" placeholder="Ciudad" required>
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
+    <footer>
+        <p>&copy; 2026 Aegis Vision Tech S.A.S. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
