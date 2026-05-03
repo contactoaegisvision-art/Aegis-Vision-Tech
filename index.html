@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegis Vision Tech S.A.S. | Seguridad Inteligente</title>
+    <title>Aegis Vision Tech S.A.S. | Seguridad de Grado Militar</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -24,97 +24,107 @@
         header { background-color: var(--azul-medianoche); padding: 1rem 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .logo-container { display: flex; align-items: center; gap: 15px; }
-        .logo-img { height: 45px; width: auto; }
-        .logo-text { color: var(--blanco); font-size: 1.1rem; font-weight: bold; text-transform: uppercase; }
-        .nav-links { list-style: none; display: flex; gap: 15px; }
-        .nav-links a { color: var(--blanco); text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
+        .logo-img { height: 45px; width: auto; border-radius: 5px; }
+        .logo-text { color: var(--blanco); font-size: 1.1rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a { color: var(--blanco); text-decoration: none; font-size: 0.85rem; transition: 0.3s; font-weight: 500; }
         .nav-links a:hover { color: var(--naranja-neon); }
 
-        /* Hero (ORDEN CORREGIDO: Título -> Texto -> Botón) */
+        /* Hero - ORDEN CORREGIDO */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(10, 17, 40, 0.6), rgba(10, 17, 40, 0.9)), 
+            background: linear-gradient(rgba(10, 17, 40, 0.7), rgba(10, 17, 40, 0.9)), 
                         url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--blanco);
         }
         .hero-content { display: flex; flex-direction: column; align-items: center; gap: 25px; padding: 0 20px; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 0; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; }
         .hero .highlight { color: var(--naranja-neon); }
-        .hero p { font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--gris-plata); max-width: 800px; }
+        .hero p { font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--gris-plata); max-width: 800px; font-weight: 300; }
 
-        /* Utilidades */
+        /* Contenedores Globales */
         .container { width: 85%; max-width: 1200px; margin: 0 auto; padding: 80px 0; }
-        h2 { text-align: center; font-size: 2.3rem; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { text-align: center; font-size: 2.3rem; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 2px; position: relative; }
+        h2::after { content: ''; width: 60px; height: 4px; background: var(--naranja-neon); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
-        /* Aliados Tecnológicos */
+        /* Sección Aliados */
         .aliados { background: #f0f0f0; padding: 30px 0; border-bottom: 1px solid #ddd; }
-        .aliados-flex { display: flex; justify-content: center; align-items: center; gap: clamp(20px, 5vw, 60px); flex-wrap: wrap; opacity: 0.5; filter: grayscale(1); }
-        .aliados-flex i { font-size: 2.2rem; }
-        .aliados p { text-align: center; font-size: 0.75rem; font-weight: bold; color: #888; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
+        .aliados-flex { display: flex; justify-content: center; align-items: center; gap: clamp(20px, 8vw, 80px); flex-wrap: wrap; opacity: 0.5; filter: grayscale(1); }
+        .aliados-flex i { font-size: 2.5rem; }
+        .aliados p { text-align: center; font-size: 0.7rem; font-weight: bold; color: #888; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
 
         /* Tarjetas */
-        .card { background: white; padding: 40px 25px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; cursor: pointer; border-bottom: 4px solid transparent; }
+        .card { background: white; padding: 45px 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s ease; cursor: pointer; border-bottom: 4px solid transparent; }
         .card:hover { transform: translateY(-12px); border-bottom: 4px solid var(--naranja-neon); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .card i { font-size: 3rem; color: var(--naranja-neon); margin-bottom: 25px; }
+        .card i { font-size: 3.5rem; color: var(--naranja-neon); margin-bottom: 25px; }
+        .card h3 { margin-bottom: 15px; color: var(--azul-medianoche); }
 
-        /* Proceso de Trabajo */
+        /* Nuestro Proceso (4 pasos) */
         .proceso-section { background-color: white; }
         .proceso-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .proceso-step { text-align: center; padding: 20px; }
-        .step-num { background: var(--naranja-neon); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(255, 90, 0, 0.3); }
+        .step-num { background: var(--naranja-neon); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(255, 90, 0, 0.3); }
 
-        /* Identidad Corporativa */
+        /* Identidad Corporativa (4 Recuadros) */
         .identidad-section { background-color: var(--azul-claro); color: white; }
         .grid-2x2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); gap: 25px; }
-        .identidad-card { background: rgba(255, 255, 255, 0.05); padding: 35px; border-radius: 12px; border-left: 5px solid var(--naranja-neon); }
+        .identidad-card { background: rgba(255, 255, 255, 0.05); padding: 35px; border-radius: 12px; border-left: 5px solid var(--naranja-neon); transition: 0.3s; }
+        .identidad-card:hover { background: rgba(255, 255, 255, 0.1); }
+        .identidad-card h3 { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; color: var(--naranja-neon); }
 
-        /* Documentos */
+        /* Documentos Corporativos */
         .docs-section { background: var(--azul-medianoche); color: white; }
         .doc-card { background: var(--azul-claro); color: white; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); }
-        .doc-card:hover { background: #23395d; }
+        .doc-card p { color: var(--gris-plata); font-size: 0.9rem; }
 
         /* FAQ Ampliado */
         .faq-container { max-width: 850px; margin: 0 auto; }
         .faq-item { background: white; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); overflow: hidden; }
         .faq-question { padding: 22px; width: 100%; text-align: left; background: none; border: none; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; color: var(--azul-medianoche); font-size: 1rem; }
-        .faq-answer { padding: 0 22px; max-height: 0; overflow: hidden; transition: 0.3s ease; color: #666; font-size: 0.95rem; }
+        .faq-answer { padding: 0 22px; max-height: 0; overflow: hidden; transition: 0.3s ease; color: #555; font-size: 0.95rem; }
         .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 22px; }
         .faq-item.active i { transform: rotate(180deg); color: var(--naranja-neon); }
 
-        /* WhatsApp y Botones */
-        .btn-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 2000; text-decoration: none; box-shadow: 0 6px 15px rgba(0,0,0,0.3); transition: 0.3s; }
-        .btn-whatsapp:hover { transform: scale(1.1) rotate(10deg); }
+        /* Botones y Flotantes */
         .btn-primary { background: var(--naranja-neon); color: white; padding: 15px 40px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; font-size: 1rem; }
         .btn-primary:hover { background: #e65100; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(230, 81, 0, 0.4); }
+        .btn-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 2000; text-decoration: none; box-shadow: 0 6px 15px rgba(0,0,0,0.3); transition: 0.3s; }
+        .btn-whatsapp:hover { transform: scale(1.1) rotate(10deg); }
 
-        /* Modales Detallados */
-        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(10, 17, 40, 0.95); align-items: center; justify-content: center; padding: 20px; }
+        /* Modales */
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(10, 17, 40, 0.96); align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: var(--blanco); padding: 45px; border-radius: 20px; width: 100%; max-width: 650px; position: relative; animation: slideUp 0.4s ease; color: var(--azul-medianoche); }
         @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .close-btn { position: absolute; top: 20px; right: 25px; font-size: 2.2rem; cursor: pointer; color: var(--azul-claro); }
         .modal-list { list-style: none; margin-top: 25px; }
         .modal-list li { margin-bottom: 15px; padding: 18px; background: white; border-left: 5px solid var(--naranja-neon); border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .modal-list h4 { color: var(--naranja-neon); margin-bottom: 5px; font-size: 1.1rem; }
+        .modal-list h4 { color: var(--naranja-neon); margin-bottom: 5px; }
 
         /* Contacto */
         .contact-flex { display: flex; flex-wrap: wrap; gap: 40px; background: white; padding: 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
         .contact-form { flex: 1.5; min-width: 300px; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; background: #fdfdfd; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; }
         .contact-info { flex: 1; min-width: 250px; }
         .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
         .info-item i { font-size: 1.5rem; color: var(--naranja-neon); }
 
-        /* Footer */
+        /* Footer Mejorado */
         footer { background: var(--azul-medianoche); color: white; padding: 60px 5% 30px; text-align: center; border-top: 4px solid var(--naranja-neon); }
-        .footer-legales-iconos { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; font-size: 2rem; opacity: 0.3; }
+        .footer-icons { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; font-size: 2rem; opacity: 0.3; }
         .nit-text { color: #666; font-size: 0.85rem; margin-top: 10px; letter-spacing: 1px; }
         .copy-text { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 30px; padding-top: 25px; font-size: 0.75rem; color: #555; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+            .contact-flex { padding: 30px; }
+        }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/573160408242?text=Hola%20Aegis%20Vision,%20solicito%20información%20técnica." class="btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://wa.me/573160408242?text=Hola%20Aegis%20Vision,%20solicito%20un%20diagnóstico%20de%20seguridad." class="btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
     <header>
         <nav class="navbar">
@@ -126,10 +136,10 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Innovación</a></li>
                 <li><a href="#proceso">Método</a></li>
+                <li><a href="#identidad">Identidad</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#documentos">Legal</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#faq">Dudas</a></li>
             </ul>
         </nav>
     </header>
@@ -144,80 +154,82 @@
 
     <div class="aliados">
         <div class="container" style="padding: 0;">
-            <p>Integrando Tecnologías de Vanguardia</p>
+            <p>Tecnología respaldada por estándares globales</p>
             <div class="aliados-flex">
-                <i class="fa-brands fa-nvidia" title="Procesamiento IA"></i>
+                <i class="fa-brands fa-nvidia" title="IA de Procesamiento"></i>
                 <i class="fa-solid fa-microchip" title="Hardware Militar"></i>
                 <i class="fa-solid fa-satellite-dish" title="Conexión Redundante"></i>
                 <i class="fa-solid fa-shield-halved" title="Cifrado de Datos"></i>
-                <i class="fa-solid fa-tower-broadcast" title="Monitoreo 5G"></i>
             </div>
         </div>
     </div>
 
     <section id="nosotros" class="container">
-        <h2 data-aos="fade-up">Nuestra Innovación</h2>
+        <h2 data-aos="fade-up">Innovación Disruptiva</h2>
         <div class="grid-3">
             <div class="card" onclick="abrirModal('modal-innovacion')" data-aos="zoom-in">
                 <i class="fa-solid fa-rocket"></i>
-                <h3>Mentalidad Startup</h3>
-                <p>Agilidad absoluta para implementar tecnología antes que nadie.</p>
-                <small style="color: var(--naranja-neon);">Ver detalles técnicos</small>
+                <h3>Agilidad Startup</h3>
+                <p>Implementamos IA meses antes que las empresas tradicionales.</p>
             </div>
             <div class="card" onclick="abrirModal('modal-seguridad')" data-aos="zoom-in" data-aos-delay="100">
-                <i class="fa-solid fa-shield-virus"></i>
-                <h3>Seguridad Proactiva</h3>
-                <p>Detectamos amenazas antes de que ocurran mediante patrones.</p>
-                <small style="color: var(--naranja-neon);">Ver detalles técnicos</small>
+                <i class="fa-solid fa-brain"></i>
+                <h3>Seguridad Predictiva</h3>
+                <p>Detectamos patrones de riesgo antes de que ocurra el incidente.</p>
             </div>
             <div class="card" onclick="abrirModal('modal-tecnologia')" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-solid fa-microchip"></i>
+                <i class="fa-solid fa-network-wired"></i>
                 <h3>Redes Neuronales</h3>
-                <p>Visión artificial entrenada para precisión quirúrgica.</p>
-                <small style="color: var(--naranja-neon);">Ver detalles técnicos</small>
+                <p>Visión artificial entrenada para precisión del 99.9%.</p>
             </div>
         </div>
     </section>
 
-    <section id="proceso" class="proceso-section">
-        <div class="container">
-            <h2 data-aos="fade-up">Nuestro Proceso Legal y Técnico</h2>
-            <div class="proceso-grid">
-                <div class="proceso-step" data-aos="fade-up">
-                    <div class="step-num">1</div>
-                    <h4>Análisis de Riesgo</h4>
-                    <p>Evaluamos vulnerabilidades en sitio sin costo.</p>
-                </div>
-                <div class="proceso-step" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-num">2</div>
-                    <h4>Plan Aegis-Fly</h4>
-                    <p>Diseñamos rutas autónomas y nodos de IA.</p>
-                </div>
-                <div class="proceso-step" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-num">3</div>
-                    <h4>Certificación</h4>
-                    <p>Validamos cumplimiento de normas de Aerocivil.</p>
-                </div>
-                <div class="proceso-step" data-aos="fade-up" data-aos-delay="300">
-                    <div class="step-num">4</div>
-                    <h4>Operación 24/7</h4>
-                    <p>Activamos el escudo digital con monitoreo humano.</p>
-                </div>
+    <section id="proceso" class="proceso-section container">
+        <h2 data-aos="fade-up">Nuestro Método de Trabajo</h2>
+        <div class="proceso-grid">
+            <div class="proceso-step" data-aos="fade-up">
+                <div class="step-num">1</div>
+                <h4>Diagnóstico</h4>
+                <p>Evaluación de puntos ciegos y riesgos perimetrales.</p>
+            </div>
+            <div class="proceso-step" data-aos="fade-up" data-aos-delay="100">
+                <div class="step-num">2</div>
+                <h4>Estrategia</h4>
+                <p>Diseño de rutas autónomas y configuración de IA.</p>
+            </div>
+            <div class="proceso-step" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-num">3</div>
+                <h4>Despliegue</h4>
+                <p>Instalación de nodos y certificación ante Aerocivil.</p>
+            </div>
+            <div class="proceso-step" data-aos="fade-up" data-aos-delay="300">
+                <div class="step-num">4</div>
+                <h4>Protección</h4>
+                <p>Monitoreo activo 24/7 con respuesta inmediata.</p>
             </div>
         </div>
     </section>
 
     <section id="identidad" class="identidad-section">
         <div class="container">
-            <h2 data-aos="fade-up">Identidad Corporativa</h2>
+            <h2 data-aos="fade-up" style="color: white;">Identidad Estratégica</h2>
             <div class="grid-2x2">
                 <div class="identidad-card" data-aos="fade-right">
-                    <h3><i class="fa-solid fa-bullseye"></i> Nuestra Misión</h3>
-                    <p>Brindar soluciones de seguridad integral combinando talento experto con tecnología IA y Drones. Garantizamos protección inquebrantable.</p>
+                    <h3><i class="fa-solid fa-bullseye"></i> Misión</h3>
+                    <p>Brindar soluciones de seguridad integral combinando talento experto con tecnología IA y Drones, garantizando protección inquebrantable.</p>
                 </div>
                 <div class="identidad-card" data-aos="fade-left">
-                    <h3><i class="fa-solid fa-eye"></i> Nuestra Visión</h3>
-                    <p>Para 2030, ser la empresa líder en seguridad tecnológica en Colombia, referentes absolutos en vigilancia híbrida.</p>
+                    <h3><i class="fa-solid fa-eye"></i> Visión</h3>
+                    <p>Ser para el 2030 la empresa líder en seguridad tecnológica en Colombia, transformando la vigilancia hacia un modelo autónomo.</p>
+                </div>
+                <div class="identidad-card" data-aos="fade-right" data-aos-delay="100">
+                    <h3><i class="fa-solid fa-list-check"></i> Objetivos</h3>
+                    <p>Reducir vulnerabilidades al 0%, optimizar tiempos de respuesta y democratizar el acceso a tecnología de vigilancia de alta gama.</p>
+                </div>
+                <div class="identidad-card" data-aos="fade-left" data-aos-delay="100">
+                    <h3><i class="fa-solid fa-earth-americas"></i> Trascendencia</h3>
+                    <p>Construir un país donde el crecimiento y el progreso no se vean limitados por la inseguridad mediante el uso de inteligencia artificial.</p>
                 </div>
             </div>
         </div>
@@ -227,41 +239,41 @@
         <h2 data-aos="fade-up">Soluciones Aegis</h2>
         <div class="grid-3">
             <div class="card" onclick="abrirModal('modal-camaras')" data-aos="flip-left">
-                <i class="fa-solid fa-camera"></i>
+                <i class="fa-solid fa-camera-viewfinder"></i>
                 <h3>Cámaras con IA</h3>
-                <p>Reconocimiento facial y lectura de placas vehicular.</p>
+                <p>Análisis de comportamiento y lectura de placas vehicular.</p>
             </div>
             <div class="card" onclick="abrirModal('modal-drones')" data-aos="flip-left" data-aos-delay="100">
-                <i class="fa-solid fa-drone"></i>
+                <i class="fa-solid fa-helicopter-symbol"></i>
                 <h3>Drones Aegis-Fly</h3>
-                <p>Patrullaje autónomo térmico sin intervención humana.</p>
+                <p>Patrullaje perimetral autónomo con visión térmica 4K.</p>
             </div>
             <div class="card" onclick="abrirModal('modal-alarmas')" data-aos="flip-left" data-aos-delay="200">
-                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-mobile-screen-button"></i>
                 <h3>Ecosistema App</h3>
-                <p>Control total, pánico GPS y alertas en tiempo real.</p>
+                <p>Control total, botón de pánico GPS y alertas en tiempo real.</p>
             </div>
         </div>
     </section>
 
     <section id="documentos" class="docs-section">
         <div class="container">
-            <h2 data-aos="fade-up">Respaldos Corporativos</h2>
+            <h2 data-aos="fade-up">Documentación Legal</h2>
             <div class="grid-3">
                 <a href="assets/docs/licencia-funcionamiento.pdf" target="_blank" class="card doc-card" data-aos="zoom-in">
                     <i class="fa-solid fa-file-pdf"></i>
                     <h3>Licencia SVSP</h3>
-                    <p>Resolución Legal Vigente</p>
+                    <p>Resolución Vigente de SuperVigilancia</p>
                 </a>
                 <a href="assets/docs/politica-privacidad.pdf" target="_blank" class="card doc-card" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fa-solid fa-shield-halved"></i>
                     <h3>Privacidad</h3>
-                    <p>Protección de Datos Personales</p>
+                    <p>Habeas Data y Tratamiento de Información</p>
                 </a>
                 <a href="assets/docs/manual-funciones.pdf" target="_blank" class="card doc-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fa-solid fa-user-gear"></i>
                     <h3>Manual Ops</h3>
-                    <p>Protocolos de Seguridad</p>
+                    <p>Protocolos de Respuesta y Funciones</p>
                 </a>
             </div>
         </div>
@@ -272,69 +284,73 @@
         <div class="faq-container">
             <div class="faq-item">
                 <button class="faq-question">¿Es legal el patrullaje con drones? <i class="fa-solid fa-chevron-down"></i></button>
-                <div class="faq-answer"><p>Totalmente. Aegis Vision Tech opera bajo los estándares de la Aerocivil y la SuperVigilancia para operaciones de seguridad privada.</p></div>
+                <div class="faq-answer"><p>Totalmente. Aegis Vision opera bajo la normativa de la Aeronáutica Civil y posee los permisos de la SuperVigilancia para operaciones tácticas.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">¿Qué sucede si hay un apagón? <i class="fa-solid fa-chevron-down"></i></button>
-                <div class="faq-answer"><p>Contamos con redundancia eléctrica (UPS) y respaldo de conexión 4G/5G en todos nuestros nodos de IA.</p></div>
+                <button class="faq-question">¿Qué pasa si se va la luz? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Nuestros sistemas cuentan con UPS (baterías de respaldo) y conexión redundante 4G/5G que garantiza operación continua 24/7.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">¿La IA reemplaza al guarda de seguridad? <i class="fa-solid fa-chevron-down"></i></button>
-                <div class="faq-answer"><p>No, la IA potencia al humano. Filtra miles de falsas alertas para que el experto humano actúe solo ante riesgos reales.</p></div>
+                <button class="faq-question">¿Puedo integrar mis cámaras viejas? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Sí, nuestra IA es compatible con la mayoría de sistemas IP existentes, permitiéndote repotenciar tu seguridad sin cambiar todo el hardware.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">¿Puedo ver las cámaras desde mi celular? <i class="fa-solid fa-chevron-down"></i></button>
-                <div class="faq-answer"><p>Sí, a través de nuestra App Aegis-Control tendrás acceso encriptado en tiempo real desde cualquier parte del mundo.</p></div>
+                <button class="faq-question">¿Quién ve mis grabaciones? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>Los videos están encriptados de punto a punto bajo protocolo AES-256. Solo tú y el personal autorizado tienen acceso mediante biometría facial.</p></div>
             </div>
         </div>
     </section>
 
     <section id="contacto" class="container">
-        <h2 data-aos="fade-up">Hablemos de tu Proyecto</h2>
+        <h2 data-aos="fade-up">Solicite su Cotización</h2>
         <div class="contact-flex">
-            <div class="contact-form" data-aos="fade-right">
+            <div class="contact-form">
                 <form action="https://formspree.io/f/contacto.aegisvision@gmail.com" method="POST">
                     <input type="text" name="nombre" placeholder="Nombre completo" required>
-                    <input type="email" name="email" placeholder="Correo corporativo / personal" required>
-                    <textarea name="mensaje" rows="4" placeholder="¿Cómo podemos ayudarte?" required></textarea>
-                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    <input type="email" name="email" placeholder="Correo electrónico corporativo" required>
+                    <textarea name="mensaje" rows="4" placeholder="Describa su necesidad de seguridad..." required></textarea>
+                    <button type="submit" class="btn-primary">Enviar Solicitud</button>
                 </form>
             </div>
-            <div class="contact-info" data-aos="fade-left">
+            <div class="contact-info">
                 <div class="info-item"><i class="fa-solid fa-envelope"></i><p>contacto.aegisvision@gmail.com</p></div>
                 <div class="info-item"><i class="fa-solid fa-phone"></i><p>+57 316 040 8242</p></div>
                 <div class="info-item"><i class="fa-solid fa-location-dot"></i><p>Bogotá, Colombia</p></div>
-                <p><strong>Atención Especializada 24/7</strong></p>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-legales-iconos">
-            <i class="fa-solid fa-building-shield" title="Empresa Constituida"></i>
-            <i class="fa-solid fa-plane-up" title="Regulación Aeronáutica"></i>
-            <i class="fa-solid fa-gavel" title="Cumplimiento Legal"></i>
+        <div class="footer-icons">
+            <i class="fa-solid fa-building-shield"></i>
+            <i class="fa-solid fa-plane-up"></i>
+            <i class="fa-solid fa-scale-balanced"></i>
         </div>
         <p><strong>Aegis Vision Tech S.A.S.</strong></p>
         <p class="nit-text">NIT: 900.123.456-7 (Prototipo Corporativo)</p>
         <div class="copy-text">
-            <p>© 2026 Aegis Vision Tech S.A.S. - Todos los derechos reservados. <br> Seguridad de Grado Militar con ADN de Startup.</p>
+            <p>© 2026 Aegis Vision Tech S.A.S. - Protección con ADN Tecnológico. <br> Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <div id="modal-innovacion" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-innovacion')">&times;</span><h3>Innovación Aegis</h3><ul class="modal-list"><li><h4>Agilidad Exponencial</h4><p>Nuestra estructura nos permite integrar IA meses antes que las grandes corporaciones.</p></li><li><h4>Fallo Cero</h4><p>Drones que regresan a base ante cualquier anomalía climática.</p></li></ul></div></div>
-    <div id="modal-seguridad" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-seguridad')">&times;</span><h3>Seguridad Total</h3><ul class="modal-list"><li><h4>Monitoreo Elite</h4><p>Central 24/7 con expertos certificados en tácticas de seguridad.</p></li><li><h4>Respuesta récord</h4><p>Coordinación directa con cuadrantes locales en segundos.</p></li></ul></div></div>
-    <div id="modal-tecnologia" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-tecnologia')">&times;</span><h3>Tecnología Vision</h3><ul class="modal-list"><li><h4>Aprendizaje Profundo</h4><p>La IA aprende de tu entorno para ignorar mascotas o vegetación.</p></li><li><h4>Encriptación AES-256</h4><p>Tu privacidad es impenetrable, incluso para nosotros.</p></li></ul></div></div>
-    <div id="modal-camaras" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-camaras')">&times;</span><h3>Vigilancia Inteligente</h3><ul class="modal-list"><li><h4>Analítica LPR</h4><p>Registro automático de matrículas con listas negras.</p></li><li><h4>Reconocimiento Facial</h4><p>Acceso biométrico sin llaves ni tarjetas.</p></li></ul></div></div>
-    <div id="modal-drones" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-drones')">&times;</span><h3>Flota Aegis-Fly</h3><ul class="modal-list"><li><h4>Visión Térmica</h4><p>Detección de calor humano a 500 metros en total oscuridad.</p></li><li><h4>Patrullas Autónomas</h4><p>Rondas perimetrales cada 15 min sin intervención humana.</p></li></ul></div></div>
-    <div id="modal-alarmas" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-alarmas')">&times;</span><h3>App Aegis Control</h3><ul class="modal-list"><li><h4>Pánico Silencioso</h4><p>Alerta a la central sin ruidos que delaten tu ubicación.</p></li><li><h4>Domótica</h4><p>Control de luces y cercas desde la misma aplicación.</p></li></ul></div></div>
+    <div id="modal-innovacion" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-innovacion')">&times;</span><h3>Mentalidad Ágil</h3><ul class="modal-list"><li><h4>Desarrollo Propio</h4><p>Creamos nuestros propios algoritmos de análisis perimetral.</p></li><li><h4>Escalabilidad</h4><p>Sistemas que crecen con tu empresa sin necesidad de cableado costoso.</p></li></ul></div></div>
+    <div id="modal-seguridad" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-seguridad')">&times;</span><h3>Estrategia Predictiva</h3><ul class="modal-list"><li><h4>Detección de Merodeo</h4><p>La IA identifica si alguien observa su propiedad por más de 3 minutos.</p></li><li><h4>Filtro de Falsas Alarmas</h4><p>Ignora mascotas, lluvia o movimiento de árboles automáticamente.</p></li></ul></div></div>
+    <div id="modal-tecnologia" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-tecnologia')">&times;</span><h3>Infraestructura Tech</h3><ul class="modal-list"><li><h4>Edge Computing</h4><p>El procesamiento se hace en la cámara, no en la nube, para mayor velocidad.</p></li><li><h4>Cifrado AES-256</h4><p>Seguridad de nivel bancario en todas tus comunicaciones.</p></li></ul></div></div>
+    <div id="modal-camaras" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-camaras')">&times;</span><h3>Kits de IA</h3><ul class="modal-list"><li><h4>Analítica LPR</h4><p>Control de placas vehiculares automático para parqueaderos.</p></li><li><h4>Conteo de Personas</h4><p>Estadísticas reales de flujo de personal en tiempo real.</p></li></ul></div></div>
+    <div id="modal-drones" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-drones')">&times;</span><h3>Flota Aegis-Fly</h3><ul class="modal-list"><li><h4>Visión Térmica</h4><p>Detecta intrusos en oscuridad total a través del calor corporal.</p></li><li><h4>Carga Autónoma</h4><p>El dron regresa a su base y se carga solo sin intervención humana.</p></li></ul></div></div>
+    <div id="modal-alarmas" class="modal"><div class="modal-content"><span class="close-btn" onclick="cerrarModal('modal-alarmas')">&times;</span><h3>Aegis Control App</h3><ul class="modal-list"><li><h4>Pánico GPS</h4><p>Envía tu ubicación exacta a nuestra central en caso de emergencia.</p></li><li><h4>Domótica</h4><p>Enciende luces o abre cercas eléctricas desde el móvil.</p></li></ul></div></div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 900, once: true });
+        
         function abrirModal(id) { document.getElementById(id).style.display = "flex"; }
         function cerrarModal(id) { document.getElementById(id).style.display = "none"; }
-        window.onclick = function(e) { if (e.target.className === 'modal') e.target.style.display = "none"; }
+        
+        window.onclick = function(e) { 
+            if (e.target.classList.contains('modal')) e.target.style.display = "none"; 
+        }
+
         document.querySelectorAll('.faq-question').forEach(btn => {
             btn.onclick = () => btn.parentElement.classList.toggle('active');
         });
